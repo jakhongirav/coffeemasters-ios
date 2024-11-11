@@ -10,12 +10,13 @@ import SwiftUI
 struct MenuPage: View {
     var body: some View {
         NavigationView {
-            List{
+            List {
                 ForEach(0 ..< 6) { item in
-                    NavigationLink {
-                        DetailsPage()
-                    } label: {
-                        ProductItem()
+                    NavigationLink(destination: DetailsPage()) {
+                        ProductItem(product: Product(id: 2, name: "Dummy product", description: "my dummy product", price: 4.25, image: ""))
+                            .padding(.top)
+                            .padding(.leading)
+                            .padding(.bottom, 12)
                     }
                 }
             }
