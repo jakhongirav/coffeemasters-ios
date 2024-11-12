@@ -17,7 +17,7 @@ struct MenuPage: View {
                 ForEach(menuManager.menu) { category in
                     Text(category.name)
                     ForEach(category.products) { product in
-                        NavigationLink(destination: DetailsPage()) {
+                        NavigationLink(destination: DetailsPage(product: product)) {
                             ProductItem(product: product)
                                 .padding(.top)
                                 .padding(.leading)
