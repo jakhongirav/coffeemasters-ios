@@ -13,7 +13,8 @@ struct DetailsPage: View {
     
     var product: Product
     @EnvironmentObject var cartManager: CartManager
-    
+    @Environment(\.dismiss) var dismiss
+
     
     
     var body: some View {
@@ -46,6 +47,7 @@ struct DetailsPage: View {
             
             Button("Add \(quantity) to Cart") {
                 cartManager.add(product: product, quantity: quantity)
+                dismiss()
             }
                 .padding()
                 .frame(width: 250.0)
@@ -54,11 +56,26 @@ struct DetailsPage: View {
                 .cornerRadius(25)
 
         }
-        // Uncomment and ensure `product` is defined
-        // .navigationTitle(product.name)
+         .navigationTitle(product.name)
+         .toolbar {
+                         LikeButton(product: product)
+                     }
     }
 }
 
 #Preview {
-    DetailsPage(product: Product(id: 1, name: "Dummy product", description: "description", price: 1.25, image: "DummyImage")).environmentObject(CartManager())
+    DetailsPage(product: Product(id: 1, name: "Dummy product", description: "description", price: 1.25, image: "DummyImage"))
+        .environmentObject(CartManager())
+        .environmentObject(LikesManager())
+}
+
+struct ProductThumbnail: View {
+    var url: URL
+    
+    var body: some View {
+        AsyncImage(url: url)
+            .cornerRadius(5)
+            .frame(maxWidth: .infinity, idealHeight: 150, maxHeight: 150)
+
+    }
 }

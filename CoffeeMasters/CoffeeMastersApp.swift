@@ -10,14 +10,16 @@ import SwiftUI
 @main
 struct CoffeeMastersApp: App {
 
-    var menuManager = MenuManager()
-    var cartManager = CartManager()
+    @StateObject private var cartManager = CartManager()
+    @StateObject private var menuManager = MenuManager()
+    @StateObject private var likesManager = LikesManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(menuManager)
                 .environmentObject(cartManager)
+                .environmentObject(likesManager)
         }
     }
 }

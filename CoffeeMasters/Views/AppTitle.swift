@@ -9,7 +9,14 @@ import SwiftUI
 
 struct AppTitle: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Spacer()
+            Image("logo")
+            Spacer()
+        }
+            .padding(4)
+            .listRowBackground(Color("Secondary"))
+            .background(Color("Secondary"))
     }
 }
 

@@ -9,11 +9,14 @@ import SwiftUI
 
 struct OrdersPage: View {
     
-    @State var name: String = "";
-    @State var phone: String = "";
+    @AppStorage("name") var name: String = ""
+    @AppStorage("phone") var phone: String = ""
     // Bring the singleton that was injected in the app
     @EnvironmentObject var cartManager: CartManager
-
+    @EnvironmentObject var menuManager: MenuManager
+    
+    @State var orderConfirmed = false
+    
     var body: some View {
         NavigationView {
             if cartManager.cart.count == 0 {
@@ -25,7 +28,7 @@ struct OrdersPage: View {
                         ForEach(cartManager.cart, id:\.0.id) { item in
                             OrderItem(item: item)
                         }
-                    }.listRowBackground(Color("Background"))
+                    }.listRowBackground(Color("CardBackground"))
                                         
                     Section("YOUR DETAILS") {
                         VStack {
@@ -37,15 +40,15 @@ struct OrdersPage: View {
                                 .textFieldStyle(.roundedBorder)
                         }.padding(.top)
                          .padding(.bottom)
-                    }.listRowBackground(Color("Background"))
+                    }.listRowBackground(Color("CardBackground"))
                     
                     Section() {
                         HStack {
                             Spacer()
                             Text("Total")
                             Spacer()
-//                            Text("$ \(cartManager.total(), specifier: "%.2f")")
-//                                .bold()
+                            Text("$ \(cartManager.total(), specifier: "%.2f")")
+                                .bold()
                             Spacer()
                         }
                     }.listRowBackground(Color.clear)
@@ -69,16 +72,16 @@ struct OrdersPage: View {
                 .listSectionSeparatorTint(Color("AccentColor"))
                 .listStyle(.insetGrouped)
                 .navigationTitle("Your Order")
-//                .alert("Order", isPresented: $orderConfirmed, actions: {
-//                    Button("OK", role: .cancel) {
-//                        //TODO: send order
-//                        orderConfirmed = false
-//                        cartManager.clear()
-//                    }
-//                }, message: {
-//                    Text("Your order is being prepared.")
-//                        .font(.title)
-//                })
+                .alert("Order", isPresented: $orderConfirmed, actions: {
+                    Button("OK", role: .cancel) {
+                        //TODO: send order
+                        orderConfirmed = false
+                        cartManager.clear()
+                    }
+                }, message: {
+                    Text("Your order is being prepared.")
+                        .font(.title)
+                })
             }
         }
     }

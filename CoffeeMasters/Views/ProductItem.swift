@@ -26,6 +26,7 @@ struct ProductItem: View {
 
                     }.padding(8)
                     Spacer()
+                    LikeButton(product: product)
                 }
             }
             .background(Color("SurfaceBackground"))
@@ -35,5 +36,5 @@ struct ProductItem: View {
 }
 
 #Preview {
-    ProductItem(product: Product(id: 1, name: "Dummy Product", description: "my product", price: 4.25, image: ""))
+    ProductItem(product: Product(id: 1, name: "Dummy Product", description: "my product", price: 4.25, image: "")).environmentObject(LikesManager())
 }

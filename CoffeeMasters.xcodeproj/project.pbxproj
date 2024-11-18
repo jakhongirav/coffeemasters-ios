@@ -11,12 +11,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EEAFB2482CDB7EBA0087AFBF /* CoffeeMasters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = CoffeeMasters.app; path = "/Users/jahongirabdujalilov/Desktop/Projects/CoffeeMasters/build/Debug-iphoneos/CoffeeMasters.app"; sourceTree = "<absolute>"; };
+		EE8D18AE2CE496680076BA6C /* CoffeeMasters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeMasters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		EE8D18D42CE4ABD90076BA6C /* Exceptions for "CoffeeMasters" folder in "CoffeeMasters" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = EEAFB2472CDB7EBA0087AFBF /* CoffeeMasters */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		EEAFB24A2CDB7EBA0087AFBF /* CoffeeMasters */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EE8D18D42CE4ABD90076BA6C /* Exceptions for "CoffeeMasters" folder in "CoffeeMasters" target */,
+			);
 			path = CoffeeMasters;
 			sourceTree = "<group>";
 		};
@@ -38,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAFB24A2CDB7EBA0087AFBF /* CoffeeMasters */,
+				EE8D18AE2CE496680076BA6C /* CoffeeMasters.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,7 +78,7 @@
 				EE2615C22CE38E5C00ED6DFD /* Alamofire */,
 			);
 			productName = CoffeeMasters;
-			productReference = EEAFB2482CDB7EBA0087AFBF /* CoffeeMasters.app */;
+			productReference = EE8D18AE2CE496680076BA6C /* CoffeeMasters.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -252,11 +266,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeMasters/Preview Content\"";
+				DEVELOPMENT_TEAM = 44B7K65S78;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeMasters/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -280,11 +295,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeMasters/Preview Content\"";
+				DEVELOPMENT_TEAM = 44B7K65S78;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoffeeMasters/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
